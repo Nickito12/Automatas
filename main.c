@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
+//Cada columna de la matriz es un caracter
 typedef struct {
 	int cantEntradas;
 	int cantEstados;
@@ -13,6 +14,7 @@ typedef struct {
 	int(*numchar) (char x);
 } automataConCaracteres;
 
+//Cada columna de la matriz es cuando la funcion correspondiente devuelve True(!=0)
 typedef struct {
 	int cantEntradas;
 	int cantEstados;
@@ -25,7 +27,8 @@ typedef struct {
 } automataConFunciones;
 
 
-
+//Trabajamos con matrices como arrays de 1 dimension(Para poder trabajar con punteros y tamano variable)
+//Y accedemos con fila*filas+columna a cada elemento
 void mostrarMatriz1d(const int* m, int a, int b)
 {
 	int i, j;
@@ -35,6 +38,7 @@ void mostrarMatriz1d(const int* m, int a, int b)
 
 	return;
 }
+//Funciones auxiliares para cadenas
 int length(const char* cadena)
 {
 	unsigned int l = 0;
@@ -62,19 +66,28 @@ const char* concat(const char* cadena1, const char* cadena2)
 	cadenaConcat[i + j] = '\0';
 	return (const char*)cadenaConcat;
 }
-
+//Inicializar automataConCaracteres
 void initConCaracteres(automataConCaracteres* objeto, int* matriz, int cantEntradas, int cantEstados, int estadosFinales, int cantEstadosFinales, int(*numchar) (char x))
 {
+    //Cantidad de columnas
 	objeto->cantEntradas = cantEntradas;
+	//Cantidad de filas
 	objeto->cantEstados = cantEstados;
+	//Estado inicial default es 0
 	objeto->estadoInicial = 0;
+	//Array de estos finales
 	objeto->estadosFinales = estadosFinales;
+	//Tamano
 	objeto->cantEstadosFinales = cantEstadosFinales;
+	//Puntero "matriz"
 	objeto->matriz = matriz;
+	//Funcion que transforma cada caracter a un numero(Para usar ese numero como indice
+    //de la matriz)
 	objeto->numchar = numchar;
 }
 int charnum(char x)
 {
+    //0='a'
 	if (x >= 'a' && x <= 'z')
 		return x - 'a';
 	if (x >= 'A' && x <= 'Z')
@@ -82,11 +95,12 @@ int charnum(char x)
 	if (x >= '0' && x <= '9')
 		return x - '0' + 'z' - 'a' + 'Z' - 'A';
 	if (x == ' ')
-		return x + '9' - '0' + 'z' - 'a' + 'Z' - 'A';
+		return 1 + '9' - '0' + 'z' - 'a' + 'Z' - 'A';
+    return 2 + '9' - '0' + 'z' - 'a' + 'Z' - 'A';
 }
 int transicionConCaracteres(automataConCaracteres* objeto, int estado, char x)
 {
-	return objeto->matriz[(estado*(objeto->cantEntradas)) + (objeto->numchar)(x)];
+	return objeto->matriz[(estado*(objeto->cantEntradas)) + ((objeto->numchar)(x))];
 }
 int perteneceConCaracteres(automataConCaracteres* objeto, char* cadena)
 {
@@ -110,15 +124,17 @@ void initConFunciones(automataConFunciones* objeto, int(**funciones) (char x), i
 int transicionConFunciones(automataConFunciones* objeto, int estado, char x)
 {
 	int i = 0;
+	//Evaluamos cada funcion hasta encontrar la columna correcta
 	while (i < objeto->cantEntradas && !(objeto->funciones[i])(x))
 		i++;
 	return i < objeto->cantEntradas ? (objeto->matriz[(estado*(objeto->cantEntradas)) + i]) : objeto->estadoRechazo;
 }
-int estaEn(int a, int* v, int s)
+//Funcion para ver si un valor x esta entre los valores de un array v(vector) de tamano s(size)
+int estaEn(int x, int* v, int s)
 {
 	int i;
 	for (i = 0; i < s; i++)
-		if (a == v[i])
+		if (x == v[i])
 			return 1;
 	return 0;
 }
