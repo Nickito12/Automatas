@@ -1,0 +1,59 @@
+Gramática Léxica
+
+A partir de este trabajo práctico vamos a diseñar un lenguaje de programación.
+En este TP se van a definir las categorías léxicas:
+	1) Diseñar las categorías léxicas del lenguaje.
+	2) Formalizar cada Lenguaje Regular con Expresiones Regulares
+	3) Definir Autómatas Finitos para cada lenguaje
+	4) Hacer un programa en C para determinar si un lexema pertenece a la Categoría Léxica correspondiente.
+
+1) Categorías Léxicas:
+
+•Palabras Reservadas
+palabrasReservada: una de 	int string void ruturn if for while
+
+•Identificadores
+identificador:	letraMayuscula
+				identificador letraMayuscula
+letraMayuscula: una de 	A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+•Constantes
+constante: 	digitoNoCero
+			constante digito
+
+digitoNoCero:uno de 	1 2 3 4 5 6 7 8 9
+digito: uno de 			0 1 2 3 4 5 6 7 8 9
+
+•Caracteres de Puntuación
+caracterPuntuacion: uno de 	( ) { } [] , ;
+
+•Operadores
+operador: uno de 	* + - / == < > && || = 
+
+2) Expresiones regulares de los lenguajes anteriores
+
+•Palabras Reservadas: 
+palabrasReservada -> int|string|void|ruturn|if|for|while
+
+•Identificadores
+
+identificador -> letraMayuscula
+identificador -> identificador letraMayuscula
+letraMayuscula -> A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+
+•Constantes
+
+constante -> digitoNoCero
+constante -> constante digito
+
+digitoNoCero -> 1|2|3|4|5|6|7|8|9
+digito -> 0|1|2|3|4|5|6|7|8|9
+
+•Caracteres de Puntuación
+
+caracterPuntuacion -> (|)|{|}|[|]|,|;
+
+•Operadores
+
+operador -> *|+|-|/|==|<|>|&&| || | = 
+
