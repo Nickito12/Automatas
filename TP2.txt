@@ -10,7 +10,7 @@ En este TP se van a definir las categorías léxicas:
 1) Categorías Léxicas:
 
 •Palabras Reservadas
-palabrasReservada: una de 	int string void ruturn if for while
+palabrasReservada: una de 	int string void return if for while
 
 •Identificadores
 identificador:	letraMayuscula
@@ -33,7 +33,7 @@ operador: uno de 	* + - / == < > && || =
 2) Expresiones regulares de los lenguajes anteriores
 
 •Palabras Reservadas: 
-palabrasReservada -> int|string|void|ruturn|if|for|while
+palabrasReservada -> int|string|void|return|if|for|while
 
 •Identificadores
 
