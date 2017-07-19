@@ -57,3 +57,5 @@ caracterPuntuacion -> (|)|{|}|[|]|,|;
 
 operador -> *|+|-|/|==|<|>|&&| || | = 
 
+3)Autómatas Finitos para cada lenguaje
+https://docs.google.com/spreadsheets/d/1DkuwrmVOzt8vtKKjHYmeuIf9vvorgMmRpojf47UKABM/edit?usp=sharing
