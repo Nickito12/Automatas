@@ -2,18 +2,18 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Automatas command line" />
+		<Option title="Automatas WindowsGUI" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Release">
-				<Option output="bin/Automatas" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/cmd/" />
-				<Option type="1" />
+				<Option output="bin/windowsGUI" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/windowsGUI/" />
+				<Option type="0" />
 				<Option compiler="gcc" />
-				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DGUI" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />

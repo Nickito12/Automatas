@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1500765804 source:c:\proyectos\sintaxis\automatas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"automatas.h"
+
+1500787505 source:c:\proyectos\sintaxis\automatas\automatas.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"automatas.h"
+
+1500767545 c:\proyectos\sintaxis\automatas\automatas.h
+
+1500787215 source:c:\proyectos\sintaxis\automatas\windowsgui.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<windows.h>
+	"automatas.h"
+
+1500759994 c:\proyectos\sintaxis\automatas\windowsgui.c
+	<windows.h>
+	"automatas.h"
+
+1500760739 source:c:\proyectos\sintaxis\automatas\definidos.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"automatas.h"
+
+1500762504 source:c:\proyectos\sintaxis\automatas\pruebas.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"automatas.h"
+
+1500761477 c:\proyectos\sintaxis\automatas\definidos.h
+	"automatas.h"
+
