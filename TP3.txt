@@ -1,0 +1,48 @@
+expresion:	(expresion)
+			valor
+			expresion operador expresion
+			llamadoF
+			definicionF
+
+llamadoF: identificador (parametros op)
+
+parametros:	valor
+			valor, parametros
+
+valor:	identificador
+		constante
+
+sentencia:	expresion;
+			ret
+			bucle
+			declaracion
+			{sentencia op}
+
+bucle:	for
+		while
+		if
+
+if: if (expresion) sentencia else op
+
+else: else sentencia
+
+sentencias:	sentencia
+			sentencias
+
+for: for (expresion;expresion;expresion) sentencia
+
+while: while (expresion) sentencia
+
+llamadoF: identificador (parametros op)
+
+parametros: valor
+			valor, parametros
+
+definicionF: tipo identificador (argumentos op) sentencia
+
+argumentos:	tipo identificador
+			tipo identificador, argumentos
+
+tipo uno de: int string void tipo*
+
+ret: return valor op
