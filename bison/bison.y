@@ -83,7 +83,7 @@ expresion:	PAREN_IZQ expresion PAREN_DER
 	| llamadoF
 	| definicionF
 
-declaracionF: tipo IDENTIFICADOR PAREN_IZQ parametros PAREN_DER
+declaracionF: tipo IDENTIFICADOR PAREN_IZQ argumentos PAREN_DER
 	| tipo IDENTIFICADOR PAREN_IZQ PAREN_DER
 
 declaracion: tipo IDENTIFICADOR
